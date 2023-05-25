@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "name": "Jut.Su Plus",
+  "version": "1.0",
+  "description": "Расширение для авто-пропуска заставки и авто-перехода к следующей серии на сайте jut.su",
+  "author": "NotAloneBoy",
+  "homepage_url": "https://sites.google.com/view/jutsuplus/main",
+  "permissions": [
+    "tabs",
+    "https://*.jut.su/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "browser_action": {
+    "default_icon": {
+      "128": "icon.png"
+    },
+    "default_title": "Jut.Su Plus",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.jut.su/*"],
+      "js": ["content_script.js"]
+    }
+  ],
+  "icons": {
+    "128": "icon.png"
+  }
+}
